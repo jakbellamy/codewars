@@ -1,8 +1,8 @@
-from src.test import test
 import numpy as np
+from src.test import test
 
 def line_test(brd):
-    return False if False in [len([num for num in row]) == len(list(dict.fromkeys(row))) for row in brd] else True
+    return all(len([num for num in row]) == len(list(dict.fromkeys(row))) for row in brd)
 
 def to_quad(brd):
     quads = [[] for row in brd]
